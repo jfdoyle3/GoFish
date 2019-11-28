@@ -6,9 +6,11 @@ namespace GoFish
     {
         public int Value;
         public int Suit;
+        private string faceDown = "##";
         private string[] Suits = { "S", "H", "C", "D" };
         public string[] faces = { "J", "Q", "K", "A", "J1", "J2" };
-        public bool Ace;
+        // public bool Ace;
+        public int Ace;
 
 
         // Need to add in J Q K A , replacing 11,12,13,14 or 11 (Ace) : All Faces are 10
@@ -22,7 +24,6 @@ namespace GoFish
             this.Value = newCard.Next(2,15);
             this.Suit = newSuit.Next(0, 4);
         }
-        
         public Card(int Value, int Suit)
         {
             this.Value = Value;
@@ -32,6 +33,12 @@ namespace GoFish
         {
             return this.Suits[this.Suit];
         }
+        public string FaceDown()
+        {
+            return this.faceDown;
+        }
+        
+
 
     }
 }
