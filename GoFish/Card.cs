@@ -8,9 +8,10 @@ namespace GoFish
         public int Suit;
         private string faceDown = "##";
         private string[] Suits = { "S", "H", "C", "D" };
-        public string[] royalFace = { "J", "Q", "K", "A", "J1", "J2" };
+        private string[] royalFace = { "J", "Q", "K", "A"};
+        private string[] joker = { "j1", "j2" };
         // public bool Ace;
-        public int Ace;
+        //public int Ace;
 
 
         // Need to add in J Q K A , replacing 11,12,13,14 or 11 (Ace) : All Faces are 10
@@ -37,9 +38,9 @@ namespace GoFish
         {
             return this.faceDown;
         }
-        public string RoyalFace()
+        public string RoyalFace(int royalValue)
         {
-         return this.faceDown;
+         return this.royalFace[royalValue];
         }
 
 
