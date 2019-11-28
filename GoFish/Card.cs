@@ -8,7 +8,7 @@ namespace GoFish
         public int Suit;
         private string faceDown = "##";
         private string[] Suits = { "S", "H", "C", "D" };
-        public string[] faces = { "J", "Q", "K", "A", "J1", "J2" };
+        public string[] royalFace = { "J", "Q", "K", "A", "J1", "J2" };
         // public bool Ace;
         public int Ace;
 
@@ -21,7 +21,7 @@ namespace GoFish
         {
             Random newCard = new Random();
             Random newSuit = new Random();
-            this.Value = newCard.Next(2,15);
+            this.Value = newCard.Next(2, 15);
             this.Suit = newSuit.Next(0, 4);
         }
         public Card(int Value, int Suit)
@@ -37,7 +37,10 @@ namespace GoFish
         {
             return this.faceDown;
         }
-        
+        public string RoyalFace()
+        {
+         return this.faceDown;
+        }
 
 
     }

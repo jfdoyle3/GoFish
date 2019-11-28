@@ -7,8 +7,8 @@ namespace GoFish
         static void Main(string[] args)
         {
             Card card = new Card();
-            //string faceDown = card.FaceDown();
-            Console.WriteLine(card.FaceDown());
+            Console.WriteLine("{0}{1}",card.Value,card.SuitSym());
+            Console.ReadKey();
 
         }
     }
