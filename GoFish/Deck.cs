@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BestHandV2
+namespace GoFish
 {
     public class Deck
     {
@@ -32,7 +32,7 @@ namespace BestHandV2
                 }
             }
         }
-        //public void Shuffle()
+      // make a loop to shuffle X amount of times.
         public List<Card> Shuffle()
         {
             Random rnd = new Random();
@@ -42,22 +42,5 @@ namespace BestHandV2
               return shuffled.ToList<Card>();
         }
 
-        //public List<List<Card>> Deal(int players, int hand)
-        //{
-
-        //    for (int plyr = 0; plyr < players; plyr++)
-        //    {
-        //        List<Card> cDealt = new List<Card>();
-
-        //        for (int crd = 0; crd < hand; crd++)
-        //        {
-        //            cDealt.Add(shuffled[crd]);
-        //            shuffled.Remove(shuffled[crd]);
-        //        }
-        //        hands.Add(cDealt);
-        //    }
-
-        //    return hands;
-        //}
     }
 }

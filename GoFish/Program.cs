@@ -6,7 +6,9 @@ namespace GoFish
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CardGame game = new CardGame();
+            
+
         }
     }
 }

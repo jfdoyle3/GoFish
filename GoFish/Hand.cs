@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace BestHandV2
+namespace GoFish
 {
     public class Hand : Deck
     {

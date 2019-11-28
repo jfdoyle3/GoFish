@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BestHandV2
+namespace GoFish
 {
     public class Card
     {
@@ -32,5 +32,6 @@ namespace BestHandV2
         {
             return this.Suits[this.Suit];
         }
+
     }
 }

@@ -1,16 +1,18 @@
-﻿using System;
+﻿// Class is doing shuffling deck , dealing cards, number of players, keeping score.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BestHandV2
+namespace GoFish
 {
-    public class Game
+    public class CardGame
     {
         public List<List<Card>> hands = new List<List<Card>>();
         private Deck deck = new Deck();
         public List<Card> shuffled;
-        public Game()
+        public CardGame()
         {
+            // or loop here X amount of times.
             this.shuffled = deck.Shuffle();
         }
         public List<List<Card>> Deal(int players, int hand)
@@ -37,31 +39,6 @@ namespace BestHandV2
             return hands;
         }
 
-        public void Play()
-        {
-            List<List<Card>> hands=Deal(4,7);
-
-
-            int handTotal= 0;
-            List<int> handTotals = new List<int>();
-
-            for (int player=0; player<hands.Count; player++)
-            {
-                Console.Write("Player {0}: ",player);
-                for (int plHands=0; plHands<hands[player].Count; plHands++)
-                {
-                    Console.Write("{0}{1},",hands[player][plHands].Value,hands[player][plHands].SuitSym());
-                    handTotal += hands[player][plHands].Value;
-                }
-                handTotals.Add(handTotal);
-                Console.WriteLine("Total Hand, player {0}:  {1}",player,handTotals[player]);
-            }
-
-            int maxValue = handTotals.Max();
-            int maxIndex =handTotals.IndexOf(maxValue);
-
-            Console.WriteLine("\n\nWinner: {0}",maxIndex);
-
-        }
+       
     }
 }
