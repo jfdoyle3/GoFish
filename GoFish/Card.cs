@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GoFish
 {
@@ -8,10 +9,10 @@ namespace GoFish
         public int Suit;
         private string faceDown = "##";
         private string[] Suits = { "S", "H", "C", "D" };
-        private string[] royalFace = { "J", "Q", "K", "A"};
-        private string[] joker = { "j1", "j2" };
-        // public bool Ace;
-        //public int Ace;
+        private string[] royalFace = { "J", "Q", "K"};
+        private object[] joker = { "j1", "j2",15,16 };
+        private object[] ace = { "A", 1, 11, 14 };
+
 
 
         // Need to add in J Q K A , replacing 11,12,13,14 or 11 (Ace) : All Faces are 10
@@ -22,7 +23,7 @@ namespace GoFish
         {
             Random newCard = new Random();
             Random newSuit = new Random();
-            this.Value = newCard.Next(2, 15);
+            this.Value = newCard.Next(2, 14);
             this.Suit = newSuit.Next(0, 4);
         }
         public Card(int Value, int Suit)
@@ -42,7 +43,9 @@ namespace GoFish
         {
          return this.royalFace[royalValue];
         }
-
-
+        public string Ace()
+        {
+            return this.ace[0].ToString();
+        }
     }
 }

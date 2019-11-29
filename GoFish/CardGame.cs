@@ -12,6 +12,8 @@ namespace GoFish
         public List<Card> shuffled;
         public CardGame()
         {
+            // CardRules/DeckRules = (A value,Face value,Jokers, no of jokers)
+            // need to set rules of card values ACE & Face Cards 
             // or loop here X amount of times.
             this.shuffled = deck.Shuffle();
         }
