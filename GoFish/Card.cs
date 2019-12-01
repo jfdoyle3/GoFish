@@ -47,5 +47,31 @@ namespace GoFish
         {
             return this.ace[0].ToString();
         }
+        public void Display()
+        {
+            
+            switch (this.Value)
+            {
+
+                case 11:
+                    Console.WriteLine("{0}{1}", this.RoyalFace(0), this.SuitSym());
+                    break;
+                case 12:
+                    Console.WriteLine("{0}{1}", this.RoyalFace(1), this.SuitSym());
+                    break;
+                case 13:
+                    Console.WriteLine("{0}{1}", this.RoyalFace(2), this.SuitSym());
+                    break;
+                case 14:
+                case 1:
+                    Console.WriteLine("{0}{1}", this.Ace(), this.SuitSym());
+                    break;
+
+                default:
+                    Console.WriteLine("{0}{1}", this.Value, this.SuitSym());
+                    break;
+
+            }
+        }
     }
 }
