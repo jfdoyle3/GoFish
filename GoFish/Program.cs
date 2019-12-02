@@ -7,8 +7,10 @@ namespace GoFish
     {
         private static void Main(string[] args)
         {
-            CardGame cardGame = new CardGame();
-            cardGame.Playgame(cardGame);
+           // Basic Game Run //
+           CardGame cardGame = new CardGame();
+            cardGame.Playgame();
+           ////////////////////
 
         }
     }

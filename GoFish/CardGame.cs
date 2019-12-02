@@ -43,29 +43,29 @@ namespace GoFish
             return hands;
         }
 
-        public void Playgame(dynamic Deal)
+        public void Playgame()
         {
-            List<List<Card>> hands = Deal(4, 7);
+            List<List<Card>> hands = Deal(2, 5);
+            
+            
 
-            int handTotal = 0;
-            List<int> handTotals = new List<int>();
+           // int handTotal = 0;
+           // List<int> handTotals = new List<int>();
 
-            for (int player = 0; player < hands.Count; player++)
-            {
-                Console.Write("Player {0}: ", player);
+           for (int player = 0; player < hands.Count; player++)
+           {
+
+              Console.Write("Player {0}: ", player);
                 for (int plHands = 0; plHands < hands[player].Count; plHands++)
                 {
-                    Console.Write("{0}{1},", hands[player][plHands].Value, hands[player][plHands].SuitSym());
-                    handTotal += hands[player][plHands].Value;
-                }
-                handTotals.Add(handTotal);
-                Console.WriteLine("Total Hand, player {0}:  {1}", player, handTotals[player]);
-            }
+                    //Console.Write("{0}{1},", hands[player][plHands].Value, hands[player][plHands].SuitSym());
+                    Console.Write("{0} ", hands[player][plHands].FaceDown());
+         
+               }
 
-            int maxValue = handTotals.Max();
-            int maxIndex = handTotals.IndexOf(maxValue);
+                Console.WriteLine();
+           }
 
-            Console.WriteLine("\n\nWinner: {0}", maxIndex);
         }
     }
 }
