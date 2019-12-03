@@ -46,16 +46,14 @@ namespace GoFish
         public void Playgame()
         {
             List<List<Card>> hands = Deal(2, 5);
-            
-            
+            int rounds = 5;
+           
 
-           // int handTotal = 0;
-           // List<int> handTotals = new List<int>();
-
+           
            for (int player = 0; player < hands.Count; player++)
            {
 
-              Console.Write("Player {0}: ", player);
+                Console.Write("Player {0}: ", player);
                 for (int plHands = 0; plHands < hands[player].Count; plHands++)
                 {
                     //Console.Write("{0}{1},", hands[player][plHands].Value, hands[player][plHands].SuitSym());
@@ -65,6 +63,7 @@ namespace GoFish
 
                 Console.WriteLine();
            }
+          
 
         }
     }
