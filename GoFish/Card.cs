@@ -15,9 +15,8 @@ namespace GoFish
 
 
 
-        // Need to add in J Q K A , replacing 11,12,13,14 or 11 (Ace) : All Faces are 10
-        // Ace to be a Bool method True for High / False for Low :  either 
-        // Need to add Jokers (J1 and J2)
+      
+        
 
         public Card()
         {
