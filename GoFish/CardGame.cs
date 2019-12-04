@@ -13,21 +13,13 @@ namespace GoFish
 
         public CardGame()
         {
-            // CardRules/DeckRules = (A value,Face value,Jokers, no of jokers)
-            // need to set rules of card values ACE & Face Cards
-            // or loop here X amount of times.
+            
             this.shuffled = deck.Shuffle();
         }
 
         public List<List<Card>> Deal(int players, int hand)
         {
-            // need a Jagged List/Array to put/remove any amount of cards on the Table in any position/cell/index.
-            // need a Jagged List/Array to have any amount of players from 1 - 52 / Hand amount 1 - 52 cards.
-
-            //List<List<Card>>  outer List: Players  /  inner List: Hands
-
-            //List A: Loop A:  Make new List B -> Loop B: Add items to List B :End Loop B -> Add ListB to List A : End Loop A
-            // Need to pass card by Index to Players  ..   All players Index 0 from the deck the 1,2,3 .. etc
+           
             for (int plyr = 0; plyr < players; plyr++)
             {
                 List<Card> cDealt = new List<Card>();
