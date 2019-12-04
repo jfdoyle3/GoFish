@@ -14,21 +14,19 @@ namespace GoFish
         private object[] ace = { "A", 1, 11, 14 };
 
 
-
-      
-        
-
         public Card()
         {
             Random newCard = new Random();
             Random newSuit = new Random();
-            this.Value = newCard.Next(2, 14);
+            this.Value =newCard.Next(2, 14);
             this.Suit = newSuit.Next(0, 4);
+            Display(this.Value);
         }
         public Card(int Value, int Suit)
         {
             this.Value = Value;
             this.Suit = Suit;
+            Display(this.Value);
         }
         public string SuitSym()
         {
@@ -46,14 +44,13 @@ namespace GoFish
         {
             return this.ace[0].ToString();
         }
-        public void Display()
+        public static void Display(int value)
         {
-            
-            switch (this.Value)
+            switch (value)
             {
-
                 case 11:
-                    Console.WriteLine("{0}{1}", this.RoyalFace(0), this.SuitSym());
+                    // Console.WriteLine("{0}{1}", this.RoyalFace(0), this.SuitSym());
+                    return RoyalFace(0);
                     break;
                 case 12:
                     Console.WriteLine("{0}{1}", this.RoyalFace(1), this.SuitSym());
@@ -65,11 +62,9 @@ namespace GoFish
                 case 1:
                     Console.WriteLine("{0}{1}", this.Ace(), this.SuitSym());
                     break;
-
                 default:
                     Console.WriteLine("{0}{1}", this.Value, this.SuitSym());
                     break;
-
             }
         }
     }

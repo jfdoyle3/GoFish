@@ -38,7 +38,7 @@ namespace GoFish
         public void Playgame()
         {
             List<List<Card>> hands = Deal(2, 5);
-            int rounds = 5;
+           // int rounds = 5;
            
 
            
