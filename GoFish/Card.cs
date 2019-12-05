@@ -50,7 +50,7 @@ namespace GoFish
         {
             return this.ace[0].ToString();
         }
-        public void Display()
+        public static void Display(int value)
         {
             //string output;
            // return maps.TryGetValue(royalFace, out output) ? output : "default";
