@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GoFish
+﻿namespace GoFish
 {
-    class Play
+    internal class Play
     {
         //public void Playgame(dynamic Deal)
         //{
         //    List<List<Card>> hands = Deal(4, 7);
-
 
         //    int handTotal = 0;
         //    List<int> handTotals = new List<int>();

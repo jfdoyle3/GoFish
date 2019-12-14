@@ -1,7 +1,6 @@
 ﻿// Class is doing shuffling deck , dealing cards, number of players, keeping score.
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace GoFish
 {
@@ -13,7 +12,6 @@ namespace GoFish
 
         public CardGame()
         {
-
             this.shuffled = deck.Shuffle();
         }
 
@@ -44,24 +42,28 @@ namespace GoFish
         public void Playgame()
         {
             List<List<Card>> hands = Deal(2, 5);
-            
-           // int handTotal = 0;
-           // List<int> handTotals = new List<int>();
 
-           for (int player = 0; player < hands.Count; player++)
-           {
+            // int handTotal = 0;
+            // List<int> handTotals = new List<int>();
 
-              Console.Write("Player {0}: ", player);
+            for (int player = 0; player < hands.Count; player++)
+            {
+                Console.Write("Player {0}: ", player);
                 for (int plHands = 0; plHands < hands[player].Count; plHands++)
                 {
                     //Console.Write("{0}{1},", hands[player][plHands].Value, hands[player][plHands].SuitSym());
-                    Console.Write("{0} ", hands[player][plHands].FaceDown());
-         
-               }
+                    Console.Write("{0} ", hands[player][plHands].FaceDown(), player);
+                }
 
                 Console.WriteLine();
-           }
+            }
+            UserInput();
+        }
 
+        public void UserInput()
+        {
+            string input = Console.ReadLine();
+            Console.WriteLine("You Type {0}",input);
         }
     }
 }
