@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace GoFish
@@ -10,9 +9,12 @@ namespace GoFish
         public int Suit;
         private string faceDown = "##";
         private string[] Suits = { "S", "H", "C", "D" };
-       // private string[] royalFace = { "J", "Q", "K"};
-        private object[] joker = { "j1", "j2",15,16 };
+
+        // private string[] royalFace = { "J", "Q", "K"};
+        private object[] joker = { "j1", "j2", 15, 16 };
+
         private object[] ace = { "A", 1, 11, 14 };
+
         private Dictionary<int, string> royalFace = new Dictionary<int, string>()
         {
             {11,"J"},
@@ -24,36 +26,42 @@ namespace GoFish
         {
             Random newCard = new Random();
             Random newSuit = new Random();
-            this.Value =newCard.Next(2, 14);
+            this.Value = newCard.Next(2, 14);
             this.Suit = newSuit.Next(0, 4);
             Display(this.Value);
         }
+
         public Card(int Value, int Suit)
         {
             this.Value = Value;
             this.Suit = Suit;
             Display(this.Value);
         }
+
         public string SuitSym()
         {
             return this.Suits[this.Suit];
         }
+
         public string FaceDown()
         {
             return this.faceDown;
         }
+
         public string RoyalFace(int royalValue)
         {
-         return this.royalFace[royalValue];
+            return this.royalFace[royalValue];
         }
+
         public string Ace()
         {
             return this.ace[0].ToString();
         }
+
         public void Display(int value)
         {
             //string output;
-           // return maps.TryGetValue(royalFace, out output) ? output : "default";
+            // return maps.TryGetValue(royalFace, out output) ? output : "default";
             //switch (value)
             //{
             //    case 11:

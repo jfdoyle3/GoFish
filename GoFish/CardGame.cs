@@ -1,7 +1,6 @@
 ﻿// Class is doing shuffling deck , dealing cards, number of players, keeping score.
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace GoFish
 {
@@ -13,13 +12,11 @@ namespace GoFish
 
         public CardGame()
         {
-            
             this.shuffled = deck.Shuffle();
         }
 
         public List<List<Card>> Deal(int players, int hand)
         {
-           
             for (int plyr = 0; plyr < players; plyr++)
             {
                 List<Card> cDealt = new List<Card>();
@@ -38,24 +35,27 @@ namespace GoFish
         public void Playgame()
         {
             List<List<Card>> hands = Deal(2, 5);
-           // int rounds = 5;
-           
+            // int rounds = 5;
+            Console.WriteLine("Player 1 Turn");
+            Console.ReadKey();
+            int state = 0;
+            int player = 0;
+            CardDisplay(player,state);
+            Console.WriteLine();
 
-           
-           for (int player = 0; player < hands.Count; player++)
-           {
-
-                Console.Write("Player {0}: ", player);
+        }
+        public void CardDisplay(int player, int state)
+        {
+            Console.Clear();
+         
+                Console.Write("Player {0}: ", player + 1);
                 for (int plHands = 0; plHands < hands[player].Count; plHands++)
                 {
-                    //Console.Write("{0}{1},", hands[player][plHands].Value, hands[player][plHands].SuitSym());
-                    Console.Write("{0} ", hands[player][plHands].FaceDown());
-         
-               }
-
-                Console.WriteLine();
-           }
-          
+                  if (state==0)
+                    Console.Write("{0} ", hands[0][plHands].FaceDown());
+                  else
+                    Console.Write("{0}{1} ", hands[0][plHands].Value, hands[0][plHands].SuitSym());
+                }
 
         }
     }
