@@ -114,10 +114,11 @@ namespace GoFish
         {
             for (int card = 0; card < hands[ply].Count; card++)
             {
-                if (card1 != hands[ply][card].Value)
+                if (card1 == hands[ply][card].Value)
                 {
-                    Console.WriteLine("No Match..Drawing a card from the deck and continuing.");
-                    Console.ReadKey();
+                   // Console.WriteLine("No Match..Drawing a card from the deck and continuing.");
+                    Console.WriteLine("Found a Match . removing");
+                    break;
                    
                    
                 }
@@ -129,10 +130,10 @@ namespace GoFish
                     
                 //}
             }
-            DrawACard(ply);
+           // DrawCard(ply);
            
         }
-        public void DrawACard(int ply)
+        public void DrawCard(int ply)
         {
             Card topCard = shuffled[0];
             shuffled.RemoveAt(0);
