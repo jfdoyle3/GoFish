@@ -36,27 +36,78 @@ namespace GoFish
         {
             List<List<Card>> hands = Deal(2, 5);
             // int rounds = 5;
-            Console.WriteLine("Player 1 Turn");
-            Console.ReadKey();
-            int state = 0;
-            int player = 0;
-            CardDisplay(player,state);
-            Console.WriteLine();
+            int playr = 1;
+            Console.WriteLine("Player {0} Cards",playr);
+            //Console.ReadKey();
+            // Do While Loop here to find winner
+            // For Loop tempt to test match and display methods
+           Round(10);
+            
 
+
+        }
+        //public void PlayerTurn()
+        //{
+        //    CardDisplay(player1, cardState);
+        //}
+        public void Round (int round)
+        {
+           
+            for (int rounds = 0; rounds < round; rounds++)
+            {
+                for (int plr = 0; plr < hands.Count; plr++)
+                {
+                    CardDisplay(plr, 1);
+                    
+                    
+                    Console.WriteLine("Pick a Card to match");
+                    int cardNumber = Convert.ToInt32(Console.ReadLine()); 
+                    Console.WriteLine("Pick Player to match with");
+                    int plyrMatch = Convert.ToInt32(Console.ReadLine());
+                    int chosenCard = hands[plr][cardNumber].Value-1;
+                    Console.WriteLine("\n\n\nchose: {0} from {0}",chosenCard,plyrMatch);
+                    Console.ReadKey();
+                    Match(chosenCard, plyrMatch);
+                }
+            }
         }
         public void CardDisplay(int player, int state)
         {
             Console.Clear();
-         
-                Console.Write("Player {0}: ", player + 1);
-                for (int plHands = 0; plHands < hands[player].Count; plHands++)
-                {
-                  if (state==0)
-                    Console.Write("{0} ", hands[0][plHands].FaceDown());
-                  else
-                    Console.Write("{0}{1} ", hands[0][plHands].Value, hands[0][plHands].SuitSym());
-                }
+          
+            Console.Write("Player {0}: ", player + 1);
+            for (int plHands = 0; plHands < hands[player].Count; plHands++)
+            {
+                if (state == 0)
+                    Console.Write("{0} ", hands[player][plHands].FaceDown());
+                else
+                    Console.Write("{0}{1} ", hands[player][plHands].Value, hands[player][plHands].SuitSym());
+            }
+            Console.WriteLine();
+            Console.Write("           ");
+            for (int idx = 0; idx < hands[0].Count; idx++)
+                Console.Write("{0}  ", idx+1);
+            
+            Console.WriteLine("\n\nPlayer Hands:");
 
+            for (int plyrhnd=0; plyrhnd<hands.Count; plyrhnd++)
+               Console.WriteLine("Player {0} Hand Count: {1}",plyrhnd+1,hands[plyrhnd].Count);
+        }
+
+        public void UserInput()
+        {
+        }
+
+        // Match: Player asking card1 to player#
+        public void Match(int card1, int ply)
+        {
+            for (int card = 0; card < hands[ply].Count; card++)
+            {
+                if (card1 == hands[ply][card].Value)
+                    Console.WriteLine("Found a Match");
+                else
+                    Console.WriteLine("No Match");
+            }
         }
     }
 }
