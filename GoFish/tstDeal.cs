@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GoFish
 {
-    class tstDeal
+    internal class tstDeal
     {
         public static void tDeal()
         {
@@ -30,10 +29,8 @@ namespace GoFish
                 for (int plHands = 0; plHands < hands[player].Count; plHands++)
                 {
                     Console.Write("{0},", hands[player][plHands]);
-
                 }
                 Console.WriteLine();
-
             }
         }
     }
