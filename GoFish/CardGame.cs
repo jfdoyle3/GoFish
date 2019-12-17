@@ -35,13 +35,13 @@ namespace GoFish
         public void Playgame()
         {
             List<List<Card>> hands = Deal(2, 5);
-            // int rounds = 5;
+            int rounds = 2;
            // int playr = 1;
           //  Console.WriteLine("Player {0} Cards", playr);
             //Console.ReadKey();
             // Do While Loop here to find winner
             // For Loop tempt to test match and display methods
-            Round(10);
+            Round(rounds);
         }
 
         //public void PlayerTurn()
@@ -54,10 +54,15 @@ namespace GoFish
             {
                 for (int plr = 0; plr < hands.Count; plr++)
                 {
+
                     CardDisplay(plr, 1);
                     dynamic turn = UserInput(plr);
-                    Console.WriteLine("\n\n\nchose: {0} from {1}", turn[0], turn[1]);
-                    Match(turn[0], turn[1]);
+                    var card1 = hands[0][0].Value;
+                    var card2 = hands[1][0].Value;
+                    bool cardMatch = Match(card1, card2);
+
+                    Console.WriteLine("{0}",cardMatch);
+                    
 
                     //Console.WriteLine("\nPick a Card to match");
                     //int cardNumber = Convert.ToInt32(Console.ReadLine());
@@ -110,28 +115,12 @@ namespace GoFish
         }
 
         // Match: Player asking card1 to player#
-        public void Match(int card1, int ply)
+        public bool Match(int card1, int card2)
         {
-            for (int card = 0; card < hands[ply].Count; card++)
-            {
-                if (card1 == hands[ply][card].Value)
-                {
-                   // Console.WriteLine("No Match..Drawing a card from the deck and continuing.");
-                    Console.WriteLine("Found a Match . removing");
-                    break;
-                   
-                   
-                }
-                //else
-                //{
-                //    Console.WriteLine("Found a Match . removing");
-                //    Console.ReadKey();
-                //    hands[ply].RemoveAt(card);
-                    
-                //}
-            }
-           // DrawCard(ply);
-           
+            if (card1 == card2)
+                return true;
+            else
+                return false;
         }
         public void DrawCard(int ply)
         {
